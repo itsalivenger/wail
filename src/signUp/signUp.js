@@ -1,7 +1,7 @@
 import css from "./signUp.css";
 import {useState} from 'react';
 import { useHistory } from 'react-router-dom';
-
+import website from '../website/website.js';
 
 let SignUp = ()=>{
     let [fullname,setFullname] = useState("");
@@ -14,7 +14,7 @@ let SignUp = ()=>{
   
     function handlesubmit(event){
         event.preventDefault();
-        fetch ("http://localhost:5000/api/SignUp", {
+        fetch (`${website}/SignUp`, {
             headers :{'Content-Type': 'Application/json',
                       'Accept': 'Application/json',
                       'Access-Control-Allow-Origin': 'https://localhost:5000'},
