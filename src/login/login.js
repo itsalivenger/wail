@@ -18,7 +18,6 @@ let Login = ({ setIsAuthenticated })=>{
             headers :{'Content-Type': 'Application/json',
                       'Accept': 'Application/json'},
             credentials: "include",
-            withCredentials: true,
             body: JSON.stringify({email, password})
         })
         .then((res)=> {

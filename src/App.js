@@ -4,9 +4,7 @@ import Home from './Home/home';
 import SignUp from './signUp/signUp.js';
 import Footer from './mainComponents/footer';
 import AboutUs from './aboutUs/aboutUs.js';
-import Logout from './logout.js'
 import Products from './products/products.js';
-import UpdateItemBox from './profile/components/manageItems/updateItem/updateItemBox';
 import {BrowserRouter as Router , Route , Switch} from 'react-router-dom';
 import Login from './login/login.js';
 
@@ -18,7 +16,6 @@ import PrivateRoute from './routesHandling/privateRoutes';
 import ProtectedRoutes from './routesHandling/protectedRoutes';
 import { useState, useEffect } from 'react';
 import authCheck from './authService/authCheck';
-export let Status = createContext();
 
 let App = ()=> {
     let [ isAuthenticated, setIsAuthenticated ] = useState(false);
@@ -38,7 +35,6 @@ let App = ()=> {
       <div id="app-container">
         <div id='backgroundImg'></div>
         <Router>
-          <Status.Provider value={{txt: 'Login', setNavLinks: ()=> {}}}>
 
             <Navbar
               isAuth={isAuthenticated}
@@ -129,7 +125,6 @@ let App = ()=> {
               </Route>
             </Switch> */}
             <Footer />
-          </Status.Provider>
         </Router>
       </div>
     );

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import css from './updateItemBox.css';
 import { Redirect } from 'react-router-dom';
+import website from '../../../../website/website.js';
+
 function UpdateItemBox(props) {
     let [name, setName] = useState('');
     let [price, setPrice] = useState('');
@@ -11,7 +13,7 @@ function UpdateItemBox(props) {
     let [url, setUrl] = useState('');
 
     useEffect(()=>{
-        fetch('http://localhost:5000/profile/manageItems', {credentials: 'include', withCredentials: true})
+        fetch(`${website}/profile/manageItems`, {credentials: 'include', withCredentials: true})
         .then(res=> res.json())
         .then(res=> {
             if(!res.approved){
